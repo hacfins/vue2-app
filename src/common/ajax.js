@@ -1,5 +1,4 @@
-
-var baseUrl = 'https://unidemo.dcloud.net.cn';
+import {baseUrl} from './env'
 export default function (url = '', options, type) {
     url = baseUrl + url;
     uni.request({
