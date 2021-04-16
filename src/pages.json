@@ -1,0 +1,131 @@
+{
+	"leftWindow": {
+		"path": "windows/left-window.vue",
+		"style": {
+			"width": "350px"
+		}
+	},
+	"topWindow": {
+		"path": "windows/top-window.vue",
+		"style": {
+			"height": "60px"
+		}
+	},
+	"pages": [
+		// pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/tabBar/component/component",
+			"aliasPath":"/",
+			"style": {
+				"navigationBarTitleText": "内置组件",
+				"app-plus": {
+					"bounce": "vertical",
+					"titleNView": {
+
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/error/404",
+			"aliasPath":"/404",
+			"name": "404",
+			"style": {
+				"navigationBarTitleText": "404",
+				"enablePullDownRefresh":true
+			}
+		},
+		{
+			"path": "pages/tabBar/API/API",
+			"aliasPath":"/api",
+			"name":"api",
+			"style": {
+				"navigationBarTitleText": "接口",
+				"app-plus": {
+					"titleNView": {
+
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/template/template",
+			"aliasPath":"/template",
+			"style": {
+				"navigationBarTitleText": "模版",
+				"app-plus": {
+					"titleNView": {
+
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/extUI/extUI",
+			"aliasPath":"/extUI",
+			"style": {
+				"navigationBarTitleText": "扩展组件",
+				"app-plus": {
+					"titleNView": {
+
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/component/view/view",
+			"aliasPath":"/view",
+			"name":"view",
+			"style": {
+				"navigationBarTitleText": "view"
+			}
+		}
+	],
+	"globalStyle": {
+		"pageOrientation": "portrait",
+		"navigationBarTitleText": "Hello uniapp",
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#007AFF",
+		"backgroundColor": "#F8F8F8",
+		"backgroundColorTop": "#F4F5F6",
+		"backgroundColorBottom": "#F4F5F6",
+		"mp-360": {
+			"navigationStyle": "custom"
+		},
+		"h5": {
+			"maxWidth": 1190,
+			"navigationBarTextStyle": "black",
+			"navigationBarBackgroundColor": "#F1F1F1"
+		}
+
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"backgroundColor": "#F8F8F8",
+		"list": [{
+				"pagePath": "pages/tabBar/component/component",
+				"iconPath": "static/component.png",
+				"selectedIconPath": "static/componentHL.png",
+				"text": "内置组件"
+			},
+			{
+				"pagePath": "pages/tabBar/API/API",
+				"iconPath": "static/api.png",
+				"selectedIconPath": "static/apiHL.png",
+				"text": "接口"
+			}, {
+				"pagePath": "pages/tabBar/extUI/extUI",
+				"iconPath": "static/extui.png",
+				"selectedIconPath": "static/extuiHL.png",
+				"text": "扩展组件"
+			}, {
+				"pagePath": "pages/tabBar/template/template",
+				"iconPath": "static/template.png",
+				"selectedIconPath": "static/templateHL.png",
+				"text": "模板"
+			}
+		]
+	}
+}

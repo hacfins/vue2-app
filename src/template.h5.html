@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>
+			<%= htmlWebpackPlugin.options.title %>
+		</title>
+		<!-- 正式发布的时候使用，开发期间不启用。↓ -->
+        <!-- <script src="/h5/touch-emulator.js"></script>
+		<script>
+            TouchEmulator();
+			if (document.documentElement.clientWidth > 1024) {
+				window.location.href = '/h5/pcguide.html#'+location.pathname+location.search;
+			}
+		</script>
+        <style>
+            ::-webkit-scrollbar{
+                display: none;
+            }
+        </style>
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?";// 百度统计key
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script> -->
+        <!-- 正式发布的时候使用，开发期间不启用。↑ -->
+		<script>
+			// document.addEventListener('DOMContentLoaded', function() {
+			// 	document.documentElement.style.fontSize = document.documentElement.clientWidth / 20 + 'px'
+			// })
+		</script>
+		<link rel="stylesheet" href="<%= BASE_URL %>static/index.<%= VUE_APP_INDEX_CSS_HASH %>.css" />
+		<script src="http://192.168.123.90:8008/cloud-config.js"></script>
+	</head>
+	<body>
+		<!-- 该文件为 H5 平台的模板 HTML，并非应用入口。 -->
+		<!-- 请勿在此文件编写页面代码或直接运行此文件。 -->
+		<!-- 详见文档：https://uniapp.dcloud.io/collocation/manifest?id=h5-template -->
+		<noscript>
+			<strong>Please enable JavaScript to continue.</strong>
+		</noscript>
+		<div id="app"></div>
+		<!-- built files will be auto injected -->
+		<script>
+            function IsPC() {
+                var userAgentInfo = navigator.userAgent.toLowerCase();
+                var Agents        = ["android", "symbianos", "windows phone",
+                    "ipad", "ipod", "iphone", "android", "phone", "mobile",
+                    "wap", "netfront", "java", "opera mobi", "opera mini", "ucweb",
+                    "windows ce", "symbian", "series", "webos", "sony",
+                    "blackberry", "dopod", "nokia", "samsung", "palmsource", "xda",
+                    "pieplus", "meizu", "midp", "cldc", "motorola", "foma",
+                    "docomo", "up.browser", "up.link", "blazer", "helio", "hosin",
+                    "huawei", "novarra", "coolpad", "webos", "techfaith",
+                    "palmsource", "alcatel", "amoi", "ktouch", "nexian",
+                    "ericsson", "philips", "sagem", "wellcom", "bunjalloo", "maui",
+                    "smartphone", "iemobile", "spice", "bird", "zte-", "longcos",
+                    "pantech", "gionee", "portalmmm", "jig browser", "hiptop",
+                    "benq", "haier", "^lct", "320x320", "240x320", "176x220",
+                    "w3c ", "acs-", "alav", "alca", "amoi", "audi", "avan", "benq",
+                    "bird", "blac", "blaz", "brew", "cell", "cldc", "cmd-", "dang",
+                    "doco", "eric", "hipt", "inno", "ipaq", "java", "jigs", "kddi",
+                    "keji", "leno", "lg-c", "lg-d", "lg-g", "lge-", "maui", "maxo",
+                    "midp", "mits", "mmef", "mobi", "mot-", "moto", "mwbp", "nec-",
+                    "newt", "noki", "oper", "palm", "pana", "pant", "phil", "play",
+                    "port", "prox", "qwap", "sage", "sams", "sany", "sch-", "sec-",
+                    "send", "seri", "sgh-", "shar", "sie-", "siem", "smal", "smar",
+                    "sony", "sph-", "symb", "t-mo", "teli", "tim-", /*"tosh",*/ "tsm-",
+                    "upg1", "upsi", "vk-v", "voda", "wap-", "wapa", "wapi", "wapp",
+                    "wapr", "webc", "winw", "winw", "xda", "xda-", "Googlebot-Mobile"];
+                var flag          = true;
+                for (var v = 0; v < Agents.length; v++) {
+                    if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+                return flag;
+            }
+            function getUrlRelativePath() {
+                var url    = document.location.toString();
+                var arrUrl = url.split("//");
+
+                var start  = arrUrl[1].indexOf("/");
+                var relUrl = arrUrl[1].substring(start);//stop省略，截取从start开始到结尾的所有字符
+
+                if (relUrl.indexOf("?") != -1) {
+                    relUrl = relUrl.split("?")[0];
+                }
+                return relUrl;
+            }
+            function getUrlParams() {
+                var url    = document.location.toString();
+                var params = '';
+
+                if (url.indexOf("?") != -1) {
+                    params = url.split("?")[1];
+                }
+                return params;
+            }
+            if(IsPC()){
+                var path = getUrlRelativePath();
+                var reg  = /^\/h5/;
+                if(reg.test(path)){
+                    location.href = path.replace(/\/h5/,'')
+                }
+			}
+		</script>
+	</body>
+</html>
